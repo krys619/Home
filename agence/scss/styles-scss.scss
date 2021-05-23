@@ -1,0 +1,273 @@
+$blue :#0fcabf;
+body{
+    font-family: 'Open Sans', sans-serif;
+header {
+    position: relative;
+    section{
+        top:50%;
+        .la-chevron-left{
+            position: absolute;
+            left:10px;
+            top:50%;   transform: translateY(-50%);
+            font-size: 3rem;
+        }
+        
+        .la-chevron-right{
+            position: absolute;
+            right:10px;
+            top:50%;  transform: translateY(-50%);
+            font-size: 3rem;
+        }
+     
+        img{
+            width: 100%;
+        }
+        div{
+            left:50%;
+            &:first-of-type{
+               
+                top:50%;
+                transform: translate(-50%,-50%);
+                .la-globe{
+                    font-size: 200px;
+                    opacity: 70%;
+                    //translate change position x et y
+                    //skew deformation
+                    //rotation rotatex(1deg) axe horizontal et y vertical et z pour pivoter
+                    //transform: translate(50px);
+                  
+                   /* &:hover{
+                        transform: rotateZ(160deg);
+                        transition: 10s;
+                    }*/
+                    }
+               a{
+                   color:white;
+                   background-color:$blue;
+                   padding: 12px;
+                   width: 150px;
+                   margin: auto;
+               }
+            }
+          
+            &:last-of-type{
+                bottom:20px;
+                transform: translateX(-50%);
+       
+            }
+        
+        }
+      
+        
+
+    }
+    nav{
+        background-color: #0fcabf;
+        h1{
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: 'Paytone One', sans-serif;
+            display: inline;
+        }
+        position: sticky;
+        bottom: 0;
+
+        ul >  li {
+            padding : 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+    }
+}
+main{
+    b{
+        color: #0fcabf;
+    }
+}
+main > section:first-of-type{
+        
+        // div section:first-of-type p b{
+        //     color: #0fcabf;
+        // }
+        .progress
+        {
+            height: 40px;
+            font-size: 20px;
+            background-image: repeating-linear-gradient(45deg, white,lightgrey 0.5px);
+        }
+        div section:nth-of-type(2)
+        {
+            .progress:nth-of-type(1) .progress-bar
+            {
+               background-color: #f5ce55;
+            }
+            .progress:nth-of-type(2) .progress-bar
+            {
+               background-color: #fb8c32; 
+            }
+            .progress:nth-of-type(3) .progress-bar
+            {
+               background-color: #58cee8; 
+            }
+
+        }
+       
+    }
+    
+main > section:nth-of-type(2){
+    img{
+        width:100%;
+    }
+    background-image: url(../images/parallax_01.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    h3{
+        color:lightgrey;
+    }
+}
+
+main > section:nth-of-type(3){
+    background-color: #333;
+    img{
+        width:100px;
+    }
+  
+    p{
+        color:lightgrey;
+    }
+}
+
+main > section:nth-of-type(4){
+    i{
+        font-size: 100px;
+    }
+}
+main > section:nth-of-type(5){
+    
+    background-color: lightgrey;
+    .card {
+        background-color: lightgrey;
+    }
+    img{
+        width:100%;
+    }
+}  
+
+/*pour titre about us*/
+main > section:first-of-type h1{/* crée un pseudo element*/
+     position: relative;
+     display: inline-block;/*block qui se comporte comme inline=>pour avoir largeur identique au contenu*/
+    }
+
+main > section:first-of-type h1::before {/* crée un pseudo element*/
+content:''; /*mettre obligatoirement un content même si rien a mettre dedans*/
+/* toujours donner de taille et positionnement pour pseudo element*/
+width: 100%;/*ne fonctionne que si on met inline-block parent*/
+height: 3px;
+position: absolute;
+background-image: linear-gradient(to right, #0fcabf, white);
+bottom: 0;
+}
+
+/* pour p vertical*/
+main > section:first-of-type p {/* crée un pseudo element*/
+    position: relative;
+    }
+/*pour titre about us*/
+
+main > section:first-of-type p::before {/* crée un pseudo element*/
+content:''; /*mettre obligatoirement un content*/
+/* toujours donner de taille et positionnement pour pseudo element*/
+width: 3px;/*ne fonctionne que si on met inline-block parent*/
+height: 100%;
+position: absolute;
+background-image: linear-gradient(to bottom, #0fcabf, white);
+left: -10px;
+}
+
+footer{
+
+    a[href*="facebook.com"] {
+        color:#3b5998;
+        
+    }
+    //ou
+    a{
+        &[href*="facebook.com"] {
+            color:#3b5998;
+        }
+    }
+    /*pas obligé de metre 'a' */
+    [href*="twitter.com"] {
+    color:#00acee;
+    }
+}
+ 
+}
+
+/*animation globe */
+//2étape from to 
+//plusieur étape => pourcentage 0 a 100%
+@keyframes tourne{
+    from{
+        /*etat initial: on a pas tourné*/
+        transform:rotate(0);
+    }
+    to{
+        /* état final : on a fait un trou*/
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes changecolor {
+    0%   {color: #0fcabf;}
+    33%  {color: white;}
+    66%  {color: white;}
+    100% {color: #0fcabf;;}
+  }
+.la-globe{
+
+    animation: tourne 50s linear infinite,changecolor 50s infinite ;
+    //on peut aussi metre un retard au demarrage
+    // animation-name: tourne;
+    // animation-duration:10s;
+    // animation-iteration-count: infinite; /*pour l'infini*/
+    // animation-timing-function: linear;/*avoir une animation qui ne ralenti pas (ease:acc et ral */
+    // cubic-bezier gère vitesse deplacement en fonction de courbe 
+
+}
+
+/*vu tab*/
+@media screen and(min-width:576px)
+{
+    nav select{
+        display: none;
+    }
+    nav ul{
+        display:block;
+        padding:0;
+    }
+    nav ul li{
+        margin:15px;
+    }
+}
+
+/*vu tab*/
+@media screen and(min-width:1350px)
+{
+    nav  h1 {
+        display: inline;
+    }
+    nav select{
+        display: none;
+    }
+    nav ul{
+        display:inline ;
+        padding:0;
+    }
+    nav ul li{
+        margin:15px;
+    }
+}
+

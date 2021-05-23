@@ -1,0 +1,218 @@
+//variable
+$yellow:#ea9f05;
+$blackfont:#494949;
+$black1:#1c1c1c;
+$grey1:#f2f2f2;
+$grey2:#373737;
+
+//fin variable
+
+body{
+    background-color: $black1;
+    header 
+    {
+        background-color: $grey1;
+        padding-top: 20px;
+        padding-left:20px;
+        div{
+        
+        & > section:first-child{
+            /*logo top gauche*/
+            h1{
+              font-size: 1.4rem;
+              span{
+                  color:$yellow;
+              }
+            }
+
+        }
+        & section:first-child::before {/* ligne logo top gauche*/
+            content:'';
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            background-image: linear-gradient(to top, $yellow, white);
+            left: 0;
+            }
+        
+        & > section:last-child{
+            
+            img{
+               width:22px;
+            }
+     
+            & > div:first-of-type
+            {
+                border: 1px solid black;
+                background-color:lightgrey;
+                div {
+               padding: 5px;
+               }
+            }
+          
+            h1{
+                display: block;
+                font-size: 1.4rem;
+                float: right;
+                padding-right: 15px;
+            }
+           
+            a{
+                color:$blackfont;
+                text-decoration: none;
+
+            }
+            
+            nav{
+              
+              ul{ 
+                  margin: 0;
+                  li{
+                      padding-left: 15px;
+                      padding-right: 15px;
+                      border-left:1px solid $blackfont;
+                  }
+                  & > li:last-child{
+                    border-right:1px solid $blackfont;
+                  }
+              }
+            }
+        }
+    }
+    }//fin header
+
+    //main
+    main{
+        & > div:first-child img{
+            width: 100%;
+            margin-top: 20px;
+        }
+        & > section:first-of-type{
+
+            background-color: $grey1;
+            article{
+                margin: 20px;
+                
+                & > div:first-of-type{
+                    background-color: white;
+                    border: 1px solid grey;
+                    box-shadow:  2px 2px 2px #aaa,-1px -1px 2px #aaa;
+                    padding: 2px;
+                    text-align: center;
+                    h1{
+                        font-size: 0.9rem;
+                    }
+                    img{
+                        width: 200px;
+                    }
+                    & > div{
+                        /*pourcentage reduction*/
+                        position: absolute;
+                        top:5px;
+                        right: 10px;
+                        background-color: black;
+                        color:$yellow;
+                        font-weight: bold;
+                        padding: 5px;
+                    }
+                }
+                & > div:last-of-type{
+                    display: flex;
+                    & div:first-of-type{
+                        width: 50%;
+                        button{
+                            background-color:$black1;
+                            color:white;
+                            padding: 0 15px;
+                            border-radius: 0;
+                        }
+                    }
+                    & div:last-of-type{
+                        width: 50%; text-align: right;
+                        span{ /*prix avant*/
+                          text-decoration: line-through;
+                          padding: 15px;
+                          font-weight: bold;
+                        }
+                        b{ /*prix apres*/
+                            color: $yellow;
+                            font-size: 1.3rem;
+                        }
+                        & b::before {/* crée un pseudo element*/
+                            content:'';
+                            width: 70px;/*ne fonctionne que si on met inline-block parent*/
+                            height: 3px;
+                            position: absolute;
+                            background-image: linear-gradient(to left, $yellow, white);
+                            bottom: 0;
+                            right: 0; margin-right: 10px;
+                            }
+                    }
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    //fin main
+
+//footer
+footer
+{
+    background-color: $grey2;
+    position: relative;
+    & > div:first-of-type{
+        height: 20px;     
+    }
+    section{
+        color:white;
+        text-align: center;
+    }
+    & section:first-of-type
+    {
+        background-color:$black1;
+       
+    nav{/*nav footer*/
+        background-color:$grey1;
+        color: $blackfont;
+        position: relative;
+        margin: 0;
+        height: 20px;
+        
+        ul{
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 500px;
+            position:absolute;
+            background-color: $grey1;
+            left: 50%;
+            transform: translateX(-50%);
+            li{
+               display: inline;
+            }    
+        }
+        
+        
+    }
+    }   
+
+    & section:nth-of-type(2)
+    {
+        padding-top: 40px;
+        img{
+            width: 50px;
+        }
+    }
+    & section:nth-of-type(3)
+    {
+        img{
+            width: 20px;
+            margin: 20px;
+        }
+        p{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+}

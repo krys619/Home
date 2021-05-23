@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    font-family:'arial';
+}
+/*header*/
+header {
+    text-align: center;
+    background-color: #0fcabf;
+}
+img{
+    width: 100%;
+    height: auto;
+    margin:0;
+}
+header h1{
+    color:white;
+    font-weight: 700;
+    font-size: 16px;
+}
+header nav{
+    padding: 14px;
+}
+nav select{ 
+    min-width: 400px;
+    margin: 12px;
+    padding: 5px;
+}
+/*fin header*/
+
+/*about*/
+article {
+    padding: 0 100px;
+    text-align: center;
+    
+}
+article h1{
+    text-align: center;
+    font-weight:bolder;
+}
+article h2{
+    text-align: center;
+    color: grey;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+article p{
+    text-align: left; color: grey;
+}
+article p b{
+    color: #0fcabf;
+}
+.bar {
+    position: relative; color: white; margin-bottom: 20px;
+    height: 40px;
+}
+
+.bar_back{
+    background-color: rgb(230, 224, 224);
+    width: 100%; height: 40px;
+    position: absolute; 
+/* avec plusieurs longueurs pour les points d'arrêt */
+background-image: repeating-linear-gradient(-45deg, 
+    transparent 0 3px, 
+    rgb(201, 201, 201) 3px 5px);
+}
+.w54{
+    width: 54% !important; background-color: yellow;
+}
+.w73{
+    width: 73% !important; background-color: orange;
+}
+.w87{
+    width: 87% !important; background-color: aqua;
+}
+.bar_front{
+    
+    width: 100%; height: 40px;
+    position: absolute;
+    top: 0px; left: 0px;  
+}
+.bar_val{
+    font-size: 20px; font-weight: 700; padding-top: 8px;
+    width: 100%; height: 40px;
+    position: absolute;
+}
+.whychoose{
+    background-image: url(../images/parallax_01.jpg);
+}
+.whychoose .face img
+{
+    width: 100px; border-radius: 50%;
+  
+}
+.whychoose div{
+    background-color: black;
+}
+
+
+/*fin about*/
+
+/*main*/
+
+/*fin main*/
+/*fin mobile*/
